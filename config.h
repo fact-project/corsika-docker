@@ -135,7 +135,7 @@
 #define __CACHE_CERENKOV__ /**/
 
 /* coconut configration cache for option CERWLEN */
-#define __CACHE_CERWLEN__ /**/
+/* #undef __CACHE_CERWLEN__ */
 
 /* coconut configration cache for option CHARM */
 /* #undef __CACHE_CHARM__ */
@@ -186,7 +186,7 @@
 /* #undef __CACHE_HORIZONTAL__ */
 
 /* coconut configration cache for option IACTEXT */
-#define __CACHE_IACTEXT__ /**/
+/* #undef __CACHE_IACTEXT__ */
 
 /* coconut configration cache for option IACT */
 #define __CACHE_IACT__ /**/
@@ -195,13 +195,13 @@
 /* #undef __CACHE_INCLINED__ */
 
 /* coconut configration cache for option INTCLONG */
-#define __CACHE_INTCLONG__ /**/
+/* #undef __CACHE_INTCLONG__ */
 
 /* coconut configration cache for option INTTEST */
 /* #undef __CACHE_INTTEST__ */
 
 /* coconut configration cache for option KEEPSOURCE */
-/* #undef __CACHE_KEEPSOURCE__ */
+#define __CACHE_KEEPSOURCE__ /**/
 
 /* coconut configration cache for option LPM */
 /* #undef __CACHE_LPM__ */
@@ -231,7 +231,7 @@
 /* #undef __CACHE_NOCLONG__ */
 
 /* coconut configration cache for option NOCOMPILE */
-/* #undef __CACHE_NOCOMPILE__ */
+/* #define __CACHE_NOCOMPILE__ */
 
 /* coconut configration cache for option OUT32 */
 /* #undef __CACHE_OUT32__ */
@@ -288,7 +288,7 @@
 /* #undef __CACHE_VENUS__ */
 
 /* coconut configration cache for option VIEWCONE */
-#define  __CACHE_VIEWCONE__  /**/
+/* #undef __CACHE_VIEWCONE__ */
 
 /* coconut configration cache for option VOLUMECORR */
 /* #undef __CACHE_VOLUMECORR__ */
@@ -303,7 +303,7 @@
 #define __CERENKOV__ 1
 
 /* Cherenkov wavelength dependent */
-#define __CERWLEN__ 1
+/* #undef __CERWLEN__ */
 
 /* pythia charm production */
 /* #undef __CHARM__ */
@@ -348,7 +348,7 @@
 /* #undef __GHEISHAD__ */
 
 /* for external IACT Cherenkov file */
-#define __IACTEXT__ 1
+/* #undef __IACTEXT__ */
 
 /* for Cherenkov telescope detector */
 #define __IACT__ 1
@@ -360,7 +360,7 @@
 /* #undef __IFORT__ */
 
 /* new Cherenkov counting */
-#define __INTCLONG__ 1
+/* #undef __INTCLONG__ */
 
 /* interaction test */
 /* #undef __INTTEST__ */
@@ -393,7 +393,7 @@
 /* #undef __NOCLONG__ */
 
 /* do not compile binaries, just extract CORSIKA compilefile */
-/* #undef __NOCOMPILE__ */
+#define __NOCOMPILE__ 1
 
 /* herwig neutrino production (NUPRIM) */
 /* #undef __NUPRIM__ */
@@ -435,7 +435,7 @@
 #define __QGSJET__ 1
 
 /* to keep the CORSIKA compilefile */
-/* #undef __SAVEDCORS__ */
+#define __SAVEDCORS__ 1
 
 /* include Sybill 2.1 program */
 /* #undef __SIBYLL__ */
@@ -474,7 +474,7 @@
 /* #undef __VENUS__ */
 
 /* viewcone */
-#define __VIEWCONE__ 1
+/* #undef __VIEWCONE__ */
 
 /* detector geometry (vertical string) */
 /* #undef __VOLUMECORR__ */
