@@ -5,38 +5,32 @@ This will build a docker container for CORSIKA
 
 Build it like this:
 ```
-docker build --build-arg CORSIKA_PASSWORD=the_password_you_received -t corsika .
+docker build --build-arg CORSIKA_PASSWORD=the_password_you_received -t corsika:<version> .
 ```
 
-This will create a docker image with CORSIKA 7.41 and IACT Package 1.49 build 
-with the config given in `config.h`. The install directory is `/opt/corsika-74100/run`
+with the config given in `config.h`. The install directory is `/opt/corsika-<version>/run`
 
 It was created with the following options:
 ```
-options:   URQMD QGSJETII VOLUMEDET TIMEAUTO 
-selection: BERNLOHRDIR CERENKOV INTCLONG IACT ATMEXT CEFFIC IACTDIR CERWLEN VIEWCONE IACTEXT
+options:   TIMEAUTO VOLUMEDET QGSJETII URQMD 
+selection: IACTDIR CERENKOV VIEWCONE BERNLOHRDIR IACT ATMEXT
 ```
+
+Currently there are two directories in this repository, containing Dockerfiles for corsika 7.41 and 7.56 each.
 
 ## Running something in the container
 
 You can get an interactive shell in the docker container with
 
 ```
-docker run -it corsika bash
+docker run -it corsika:<version> bash
 ```
 
+## Mount directories
 
-## Using the container to run your simulation
+To access your host file system (e.g. for storing results and accessing input cards), you can mount volumes using the `-v` docker option:
 
-Best method is probably to create a new container inheriting from this
-and use dockers `ADD` command to add files.
-
-
-```docker
-
-from corsika
-
-ADD inputcard /root/
-RUN cd /opt/corsika-74100/run && \
-	corsika74100Linux_QGSII_urqmd < /root/inputcard
 ```
+docker run -v /absolute/path/to/data:/data -it corsika:<version> bash
+```
+
