@@ -25,6 +25,7 @@ You can get an interactive shell in the docker container with
 ```
 docker run -it corsika:<version> bash
 ```
+Add the `--rm ` option to automatically remove the container once it has stopped.
 
 ## Mount directories
 
