@@ -14,7 +14,7 @@ RUN curl ftp://ikp-ftp.ikp.kit.edu/corsika-v740/corsika-74100.tar.gz \
 
 ADD config.h /opt/corsika-74100/include
 RUN cd /opt/corsika-74100 && ./coconut < /dev/null
-ADD ../atmprof7.dat ../atmprof8.dat /opt/corsika-74100/run/
+ADD atmprof7.dat atmprof8.dat /opt/corsika-74100/run/
 
 WORKDIR /opt/corsika-74100/run
 CMD bash
