@@ -3,9 +3,11 @@
 
 This will build a docker container for CORSIKA
 
-Build it like this:
+
+To build you `cd` into the corsika-<version> directory and then execute `docker build` like this:
+
 ```
-docker build --build-arg CORSIKA_PASSWORD=the_password_you_received -t corsika:<version> .
+docker build --build-arg CORSIKA_PASSWORD=the_password_you_received -t <useful container name e.g: corsika:75600> .
 ```
 
 with the config given in `config.h`. The install directory is `/opt/corsika-<version>/run`
@@ -23,7 +25,7 @@ Currently there are two directories in this repository, containing Dockerfiles f
 You can get an interactive shell in the docker container with
 
 ```
-docker run -it corsika:<version> bash
+docker run -it <useful container name you chose before> bash
 ```
 Add the `--rm ` option to automatically remove the container once it has stopped.
 
@@ -32,6 +34,6 @@ Add the `--rm ` option to automatically remove the container once it has stopped
 To access your host file system (e.g. for storing results and accessing input cards), you can mount volumes using the `-v` docker option:
 
 ```
-docker run -v /absolute/path/to/data:/data -it corsika:<version> bash
+docker run -v /absolute/path/to/data:/data -it <useful container name> bash
 ```
 
