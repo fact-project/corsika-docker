@@ -37,3 +37,16 @@ To access your host file system (e.g. for storing results and accessing input ca
 docker run -v /absolute/path/to/data:/data -it <useful container name> bash
 ```
 
+## File ownership and permissions
+
+To avoid hassle with file permissions and ownership, you should create a docker image,
+which has the same user, user id and group id as the your user on the host system.
+
+A Dockerfile might look like this:
+
+```{Dockerfile}
+FROM corsika:75600
+
+RUN useradd -m maxnoe -u 1000
+USER maxnoe
+```
