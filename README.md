@@ -47,6 +47,6 @@ A Dockerfile might look like this:
 ```{Dockerfile}
 FROM corsika:75600
 
-RUN useradd -m maxnoe -u 1000
+RUN useradd --create-home --uid 1000 maxnoe
 USER maxnoe
 ```
